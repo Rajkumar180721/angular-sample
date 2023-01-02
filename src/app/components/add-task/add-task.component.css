@@ -1,0 +1,36 @@
+
+.add-form {
+    padding: 1rem;
+    margin: 10px 0;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 10px;
+}
+.form-control * {
+    margin: 5px 0;
+}
+.form-control * {
+    display: block;
+}
+
+.form-control input,.form-control button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .4);
+}
+
+.form-control-check {
+    display: flex;
+}
+.form-control-check input{
+    width: auto;
+    margin-left: 10px;
+}
+
+.form-control button {
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

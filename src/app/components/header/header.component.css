@@ -5,3 +5,12 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
+#header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#header-buttons .slider {
+    margin-right: 10px;
+}
