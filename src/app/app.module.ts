@@ -13,6 +13,14 @@ import { ButtonComponent } from './components/button/button.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+const routes: Routes = [
+  {path: "", component: TasksComponent},
+  {path: "about", component: AboutComponent},
+];
 
 @NgModule({
   declarations: [
@@ -21,17 +29,21 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     ButtonComponent,
     TasksComponent,
     TaskItemComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes),
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     MatSlideToggleModule
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

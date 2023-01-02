@@ -1,7 +1,7 @@
 
 <header>
     <h1>{{title}}</h1>
-    <div id="header-buttons" >
+    <div id="header-buttons" *ngIf="hasRoute('/')" >
         <mat-slide-toggle *ngIf="showAddTask" color="primary" class="slider" [checked]="autoClose" (click)="toggleAutoClose()">Auto Close</mat-slide-toggle>
         <app-button color="{{showAddTask?'red':'blue'}}" text="{{showAddTask?'Close':'Add'}}" (btnClick)="toogleAddTask()" ></app-button>
     </div>

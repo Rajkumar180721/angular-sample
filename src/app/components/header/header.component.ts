@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 import { UiService } from 'src/app/services/ui.service';
 
@@ -13,7 +13,7 @@ export class HeaderComponent {
   showAddTask: boolean = false;
   autoClose: boolean = false;
 
-  constructor(private uiServie: UiService) {
+  constructor(private uiServie: UiService, private router: Router) {
     this.uiServie.onToggleAddTask().subscribe(value => {
       this.showAddTask = value;
     })
@@ -26,5 +26,9 @@ export class HeaderComponent {
   toggleAutoClose(): void {
     this.autoClose = !this.autoClose;
     this.uiServie.toggleAutoClose(this.autoClose);
+  }
+
+  hasRoute(route: string): boolean {
+    return this.router.url === route
   }
 }
