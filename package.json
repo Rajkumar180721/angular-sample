@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "server": "nodemon Backend/server.js",
     "server-start": "json-server --watch db.json --port 5000 --no-cors"
   },
   "private": true,
@@ -26,8 +27,13 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
+    "express": "^4.18.2",
     "json-server": "^0.17.1",
+    "knex": "^2.3.0",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

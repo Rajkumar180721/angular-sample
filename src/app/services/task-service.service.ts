@@ -9,6 +9,11 @@ const httpOptions = {
   })
 }
 
+type responseModel = {
+  status: string,
+  tasks: Task[]
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,21 +23,21 @@ export class TaskService {
   
   constructor(private http:HttpClient) {}
 
-  getTask(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.url);
+  getTask(): Observable<responseModel> {
+    return this.http.get<responseModel>(this.url);
   }
 
-  deleteTask(task: Task): Observable<Task> {
+  deleteTask(task: Task): Observable<responseModel> {
     const url = this.url+'/'+task.id;
-    return this.http.delete<Task>(url);
+    return this.http.delete<responseModel>(url);
   }
 
-  updateTaskReminder(task: Task): Observable<Task> {
-    const url = this.url+'/'+task.id;
-    return this.http.put<Task>(url, task, httpOptions);
+  updateTaskReminder(task: Task): Observable<responseModel> {
+    const url = this.url;
+    return this.http.put<responseModel>(url, {task}, httpOptions);
   }
 
-  addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.url, task, httpOptions);
+  addTask(task: Task): Observable<responseModel> {
+    return this.http.post<responseModel>(this.url, {task}, httpOptions);
   }
 }
